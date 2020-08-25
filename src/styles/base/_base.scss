@@ -21,6 +21,7 @@ body
 {
     background-color: #121212;
     color:floralwhite !important;
+    transition: all 0.5s;
 
     padding: 5rem 0;
     .table
@@ -68,4 +69,5 @@ body
 .App-light
 {
     padding: 5rem 0;
+    transition: all 0.25s;
 }

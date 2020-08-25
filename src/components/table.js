@@ -57,7 +57,7 @@ const State_data = (props) => {
     return (
         <div className='table-container' >
             <h1> STATEWISE CASES</h1>
-            <Table responsive striped hover bordered >
+            <Table responsive striped bordered >
                 <thead>
                     <tr className='header-container' >
                         <th className='state'>State</th>

@@ -3,27 +3,27 @@ import Jsoncontext from '../context/context';
 import Totaldiv from './total';
 const Main = () => {
 
-    let total = useContext(Jsoncontext)
+    let { stateWise: statewise_total } = useContext(Jsoncontext)
 
-    if (total !== undefined) {
-        total = total[0]
+    if (statewise_total !== undefined) {
+        statewise_total = statewise_total[0]
 
     }
     return (
         <div className='main_wrapper' >
-            {total ? <div className='main'>
+            {statewise_total ? <div className='main'>
                 <div className='main__top row justify-content-center'>
                     <div className='main__top__left col-12 col-md-5'>
                         <Totaldiv
                             heading={'Total cases'}
-                            total={total.confirmed}
-                            delta={total.deltaconfirmed} />
+                            total={statewise_total.confirmed}
+                            delta={statewise_total.deltaconfirmed} />
                     </div>
                     <div className='main__top__right col-12 col-md-5'>
                         <Totaldiv
                             heading={'Recovered cases'}
-                            total={total.recovered}
-                            delta={total.deltarecovered} />
+                            total={statewise_total.recovered}
+                            delta={statewise_total.deltarecovered} />
                     </div>
                 </div>
 
@@ -31,13 +31,13 @@ const Main = () => {
                     <div className='main__bottom__left col-12 col-md-5'>
                         <Totaldiv
                             heading={'Total Deceased'}
-                            total={total.deaths}
-                            delta={total.deltadeaths} />
+                            total={statewise_total.deaths}
+                            delta={statewise_total.deltadeaths} />
                     </div>
                     <div className='main__bottom__right col-12 col-md-5'>
                         <Totaldiv
                             heading={'Active Cases'}
-                            total={total.active} />
+                            total={statewise_total.active} />
                     </div>
                 </div>
             </div> : undefined}

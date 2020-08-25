@@ -51,7 +51,12 @@ body
          left:-2px;
         // z-index: 10;
         background-color: #000;
-        }}
+        }
+    }
+    .Chart
+    {
+        box-shadow: none;
+    }
 }
 
 .App-light

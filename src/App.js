@@ -5,6 +5,9 @@ import Togglebutton from "./components/button"
 import Main from './components/Mainstat';
 import Table from './components/table';
 import Chart from './components/charts'
+import RecoveredChart from './components/reccharts'
+import DeceaseddChart from './components/deccharts'
+
 import Jsoncontext from './context/context';
 
 const url = "https://api.covid19india.org/data.json"
@@ -19,7 +22,7 @@ const requestOptions = {
 function App() {
 
   const [stateWise, setData] = useState()
-
+  const [total, setTotal] = useState()
   const [flag, setToggle] = useState(0)
 
   useEffect(() => {
@@ -37,6 +40,7 @@ function App() {
           }
         }
         setData(resp.statewise)
+        setTotal(resp.cases_time_series)
       })
   }, [])
 
@@ -45,7 +49,7 @@ function App() {
   }
 
   return (
-    <Jsoncontext.Provider value={stateWise}>
+    <Jsoncontext.Provider value={{ stateWise, total }}>
       <div className={flag ? "App-dark" : "App-light"}>
         <div className="header_wrapper row">
           <div className="col-9">
@@ -58,6 +62,8 @@ function App() {
         <Main />
         <Table />
         <Chart />
+        <RecoveredChart />
+        <DeceaseddChart />
       </div>
     </Jsoncontext.Provider>
   );

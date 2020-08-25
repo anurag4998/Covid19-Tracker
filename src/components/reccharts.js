@@ -2,23 +2,26 @@ import React, { useContext } from 'react';
 import Jsoncontext from '../context/context';
 import { Bar } from 'react-chartjs-2';
 let dataset = {};
-function Chart() {
+function Chartrecovered() {
     let { total } = useContext(Jsoncontext)
     let xlabels = []
     let datum = []
     if (total) {
         for (let i = 0; i < total.length; i++) {
+            datum.push(total[i].dailyrecovered)
             xlabels.push(total[i].date.substring(0, 6))
-            datum.push(total[i].dailyconfirmed)
 
         }
+
+
+
 
         dataset = {
             labels: xlabels,
             datasets: [{
-                label: 'Confirmed',
+                label: 'Recovered',
                 data: datum,
-                backgroundColor: "rgba(104, 109, 224,0.6)",
+                backgroundColor: "rgba(186, 220, 88,1.0)",
                 borderWidth: 1
             }]
         }
@@ -30,7 +33,7 @@ function Chart() {
     return (
         <div className='Chart'>
             <div className='Chart_wrapper__title'>
-                <h2>Daily New Cases</h2>
+                <h2>Daily Recovered Cases</h2>
             </div>
             <div className='Chart_wrapper'>
                 <Bar
@@ -77,4 +80,4 @@ function Chart() {
 
 
 
-export default Chart
+export default Chartrecovered

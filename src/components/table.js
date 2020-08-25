@@ -2,17 +2,16 @@ import React, { useContext } from 'react';
 import Jsoncontext from '../context/context';
 import { Table } from 'reactstrap';
 const State_data = (props) => {
-    let total = useContext(Jsoncontext)
+    let { stateWise: total } = useContext(Jsoncontext)
     let table;
     if (total !== undefined) {
 
         table = total.filter(item => item.confirmed > 0)
         table = table.filter(item => item.state !== 'Total')
-        console.log(table)
         table = table.map(item => {
             return (
-                <tr className='row-container'>
-                    <td className='state'>
+                <tr className='row-container' key={item.state}>
+                    <td className='state' >
                         <div className='state-val'>
                             {item.state}</div>
                     </td>
@@ -40,12 +39,15 @@ const State_data = (props) => {
                         <div className='val '>
                             {item.deltarecovered > 0 ? `+${item.deltarecovered}` : 0}</div>
                     </td>
+
                     <td className='value'>
                         <div className='val'>
+                            {/* eslint-disable-next-line */}
                             {item.confirmed == 0 ? '0' : (parseInt(item.active) / parseInt(item.confirmed) * 100).toFixed(2)}</div>
                     </td>
                     <td className='value'>
                         <div className='val'>
+                            {/* eslint-disable-next-line */}
                             {item.confirmed == 0 ? '0' : (parseInt(item.recovered) / parseInt(item.confirmed) * 100).toFixed(2)}</div>
                     </td>
                 </tr>

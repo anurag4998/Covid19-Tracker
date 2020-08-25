@@ -1,0 +1,33 @@
+
+.Chart
+{
+            margin: 0 auto;
+            max-width: 67%;
+            box-shadow: 0px 5px 15px #dfdfdf;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            .Chart_wrapper
+        {
+            
+            min-height: 600px;
+            max-height: 700px;
+            padding: 1rem;
+            position: relative;
+        }
+}
+
+
+@media screen and (max-width:500px)
+{
+    .Chart
+    {
+        max-width: 90%;
+        max-height: 500px;
+
+        .Chart_wrapper
+        {
+            max-height: 400px;
+
+        }
+    }
+}

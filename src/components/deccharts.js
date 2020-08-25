@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Jsoncontext from '../context/context';
 import { Bar } from 'react-chartjs-2';
 let dataset = {};
-function Chart() {
+function Decchart() {
     let { total } = useContext(Jsoncontext)
     let xlabels = []
     let datum = []
@@ -16,9 +16,9 @@ function Chart() {
         dataset = {
             labels: xlabels,
             datasets: [{
-                label: 'Confirmed',
+                label: 'Deceased',
                 data: datum,
-                backgroundColor: "rgba(104, 109, 224,0.6)",
+                backgroundColor: "rgba(255, 121, 121,1.0)",
                 borderWidth: 1
             }]
         }
@@ -30,7 +30,7 @@ function Chart() {
     return (
         <div className='Chart'>
             <div className='Chart_wrapper__title'>
-                <h2>Daily New Cases</h2>
+                <h2>Daily Deceased Cases</h2>
             </div>
             <div className='Chart_wrapper'>
                 <Bar
@@ -77,4 +77,4 @@ function Chart() {
 
 
 
-export default Chart
+export default Decchart

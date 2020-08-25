@@ -20,8 +20,12 @@ body
 .App-dark 
 {
     background-color: #121212;
-    color:floralwhite !important;
     padding: 5rem 0;
+    .table
+    {
+        color:floralwhite !important;
+
+    }
     .total_display__container
     {
         box-shadow: none;

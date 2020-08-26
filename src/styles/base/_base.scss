@@ -22,8 +22,15 @@ body
     background-color: #121212;
     color:floralwhite !important;
     transition: all 0.5s;
-
     padding: 5rem 0;
+    .header_wrapper
+    {
+        h2
+        {
+         color:rgba(255, 255, 255, 0.5);
+
+        }
+    }
     .table
     {
         color:floralwhite !important;

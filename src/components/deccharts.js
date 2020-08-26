@@ -4,12 +4,13 @@ import { Bar } from 'react-chartjs-2';
 let dataset = {};
 function Decchart() {
     let { total } = useContext(Jsoncontext)
+    console.log(total)
     let xlabels = []
     let datum = []
     if (total) {
         for (let i = 0; i < total.length; i++) {
             xlabels.push(total[i].date.substring(0, 6))
-            datum.push(total[i].dailyconfirmed)
+            datum.push(total[i].dailydeceased)
 
         }
 

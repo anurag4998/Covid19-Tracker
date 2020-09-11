@@ -1,0 +1,33 @@
+.footer-container {
+  max-width: 67%;
+  margin: 6rem auto;
+  font-size: 1.5rem;
+  .footer-text {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-right: 0.5rem;
+      font-weight: 600;
+    }
+  }
+
+  .footer-icons {
+    a {
+      margin-right: 0.5rem;
+      font-size: 2rem;
+    }
+    .git {
+      color: #ad5c51;
+    }
+    .linkedin {
+      color: #2867b2;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) and (min-width: 600px) {
+  .footer-container {
+    max-width: 80%;
+  }
+}

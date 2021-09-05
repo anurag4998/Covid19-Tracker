@@ -11,7 +11,7 @@ import Footer from "./components/footer";
 
 import Jsoncontext from "./context/context";
 
-const url = "https://api.covid19india.org/data.json";
+const url = "https://data.covid19india.org/data.json";
 const requestOptions = {
   method: "GET",
   redirect: "follow",
